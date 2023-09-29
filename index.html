@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste des Utilisateus</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="p-4">
+      <h1 class="text-4xl font-bold mb-4">Liste des Utilisateurs</h1>
+      <input type="text" id="nom" class="mb-2" placeholder="Nom" />
+      <input type="number" id="age" class="mb-2" placeholder="Âge" />
+      <input type="text" id="adresse" class="mb-2" placeholder="Adresse" />
+      <button id="valider" class="bg-blue-500 text-white p-2">Valider</button>
+      <div id="listeUtilisateurs" class="mt-4"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tableau pour stocker les utilisateurs
+        const utilisateurs = [];
+
+        // Récupérez les éléments du DOM
+        const nomInput = document.getElementById("nom");
+        const ageInput = document.getElementById("age");
+        const adresseInput = document.getElementById("adresse");
+        const listeUtilisateurs = document.getElementById("listeUtilisateurs");
+
+        // Ajoutez un écouteur d'événements au bouton "Valider"
+        document
+          .getElementById("valider")
+          .addEventListener("click", function () {
+            // Récupérez les valeurs des champs de saisie
+            const nom = nomInput.value;
+            const age = parseInt(ageInput.value); // Convertissez l'âge en nombre
+            const adresse = adresseInput.value;
+
+            // Générez un identifiant unique (peut être basé sur la date actuelle, par exemple)
+            const id = Date.now();
+
+            // Créez un objet utilisateur avec les données saisies
+            const utilisateur = {
+              id: id,
+              nom: nom,
+              age: age,
+              adresse: adresse,
+            };
+
+            // Ajoutez l'utilisateur au tableau
+            utilisateurs.push(utilisateur);
+
+            // Affichez la liste des utilisateurs dans le HTML
+            afficherListeUtilisateurs();
+
+            // Effacez les valeurs des champs de saisie
+            nomInput.value = "";
+            ageInput.value = "";
+            adresseInput.value = "";
+          });
+
+        // Fonction pour afficher la liste des utilisateurs
+        function afficherListeUtilisateurs() {
+          // Effacez le contenu précédent
+          listeUtilisateurs.innerHTML = "";
+
+          // Parcourez le tableau d'utilisateurs et affichez-les
+          utilisateurs.forEach(function (utilisateur) {
+            const utilisateurDiv = document.createElement("div");
+            utilisateurDiv.className = "mb-4";
+
+            const nomElement = document.createElement("h2");
+            nomElement.className = "text-2xl font-semibold mb-2";
+            nomElement.textContent = `Nom : ${utilisateur.nom}`;
+
+            const ageElement = document.createElement("h3");
+            ageElement.className = "text-xl font-medium mb-2";
+            ageElement.textContent = `Âge : ${utilisateur.age}`;
+
+            const adresseElement = document.createElement("p");
+            adresseElement.className = "text-lg font-normal";
+            adresseElement.textContent = `Adresse : ${utilisateur.adresse}`;
+
+            utilisateurDiv.appendChild(nomElement);
+            utilisateurDiv.appendChild(ageElement);
+            utilisateurDiv.appendChild(adresseElement);
+
+            listeUtilisateurs.appendChild(utilisateurDiv);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

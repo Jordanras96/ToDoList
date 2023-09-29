@@ -1,0 +1,41 @@
+# Dossiers de build / output générés
+/build
+/dist
+/out
+/.next
+
+# Dossiers de modules Node.js
+/node_modules
+
+# Fichiers de sauvegarde
+.DS_Store
+Thumbs.db
+
+# Fichiers de configuration spécifiques à l'environnement
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Fichiers de verrouillage de dépendance (package-lock.json ou yarn.lock)
+package-lock.json
+yarn.lock
+
+# Fichiers de cache ou temporaires
+.cache
+.vscode
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers de sauvegarde de l'éditeur
+*.bak
+git config --global user.name "Jordanras96"
+git config --global user.email "riantsoa96@gmail.com"
+git config --global core.editor "C:\Users\nrj\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+git config --global github.user "Jordanras96"
+git config --global github.email "riantsoa96@gmail.com"
+git config user.name "Jordanras96"
+git config user.email "riantsoa96@gmail.com"
+git config core.editor "C:\Users\nrj\AppData\Local\Programs\Microsoft VS Code\Code.exe"

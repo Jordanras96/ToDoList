@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Project</title>
+  </head>
+  <body class="">
+    <header class="py-5">
+      <h1
+        class="font-anurati uppercase animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-5xl font-black text-center"
+      >
+        To Do List
+      </h1>
+    </header>
+    <main class="container mx-auto p-4">
+      <section id="addCollection" class="flex justify-center">
+        <input
+          type="text"
+          name="task"
+          id="newCollection"
+          class="py-2 px-3 rounded-lg mx-1 border"
+          placeholder="Add collection"
+        />
+        <button
+          type="submit"
+          id="addBtn"
+          class="bg-slate-200 bg-opacity-20 hover:bg-opacity-100 rounded-lg duration-300 hover:rounded-3xl py-2 px-2"
+        >
+          <img
+            id="gif"
+            src="./src/assets/addCollection.gif"
+            alt=""
+            class="w-8 opacity-100"
+          />
+        </button>
+      </section>
+      <section id="collectionList" class="container mx-auto w-1/2">
+        <div class="collapse collapse-arrow bg-base-200 my-10">
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title text-xl font-medium">a</div>
+          <div class="collapse-content">qsdqf</div>
+          <div id="control" class="flex justify-end items-center">
+            <div>
+              <label for="my_modal_7" class="btn" id="addTask">
+                <img
+                  src="./src/assets/addTask.gif"
+                  alt="Animate add task icon"
+                  class="w-10"
+                />
+              </label>
+              <input type="checkbox" id="my_modal_7" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box">
+                  <h3 class="text-lg font-bold">New task</h3>
+                  <div class="py-4 flex flex-col items-center">
+                    <div class="form-control w-full max-w-xs">
+                      <label class="label">
+                        <span class="label-text">Task name</span>
+                        <span class="label-text-alt text-red-500">*</span>
+                      </label>
+                      <input type="text" id="taskNameInput" placeholder="Name here" class="input input-bordered w-full max-w-xs" />
+                    </div>
+                    <div class="form-control w-full max-w-xs py-4 ">
+                      <label class="label">
+                        <span class="label-text">Date expired</span>
+                        <span class="label-text-alt text-red-500">*</span>
+                      </label>
+                      <input id="datepicker" id="taskDateInput" type="text" placeholder="dd/mm/yy" class="input input-bordered w-full max-w-xs" />
+                    </div>
+                    <div class="form-control w-full max-w-xs pb-4">
+                      <label class="label">
+                        <span class="label-text">Collection Color</span>
+                      </label>
+                      <select class="select select-bordered" id="taskColorInput">
+                        <option disabled selected>Select color for collection</option>
+                        <option>Star Wars</option>
+                        <option>Harry Potter</option>
+                        <option>Lord of the Rings</option>
+                        <option>Planet of the Apes</option>
+                        <option>Star Trek</option>
+                      </select>
+                    </div>
+                    <div id="taskValidate" class="pt-4">
+                      <button id="addTaskBtn" class="btn btn-outline btn-wide">Button</button>
+                    </div>
+                  </div>
+                </div>
+                <label class="modal-backdrop" for="my_modal_7">Close</label>
+              </div>
+            </div>
+            <div>
+              <button class="btn" onclick="my_modal_5.showModal()">
+                <img
+                  src="./src/assets/removeTask.gif"
+                  alt="remove task"
+                  class="w-10"
+                />
+              </button>
+              <dialog
+                id="my_modal_5"
+                class="modal modal-bottom sm:modal-middle"
+              >
+                <div class="modal-box">
+                  <h3 class="font-bold text-lg">Hello!</h3>
+                  <p class="py-4">
+                    Press ESC key or click the button below to close
+                  </p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title text-xl font-medium">b</div>
+          <div class="collapse-content">asda</div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
